@@ -10,9 +10,8 @@ function App() {
     <div className="App">
     <Header />
     <NavBar />
-    <ReviewList />
     <Routes>
-        <Route path='/' element={<p>PLACEHOLDER TEXT</p>} />
+        <Route path='/' element={<ReviewList />} />
         <Route path='/reviews' element={<ReviewList />} />
         <Route path='*' element={<p>404 not found!</p>} />
       </Routes>

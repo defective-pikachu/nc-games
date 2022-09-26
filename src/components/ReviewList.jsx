@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom'
 import { getReviews } from '../utils/api';
@@ -27,7 +26,7 @@ if (isLoading) {
         <main>
         <ul>
             {reviews.map((review) => {
-                const category = review.category.charAt(0).toUpperCase() + review.category.slice(1)
+                const category = review.category.charAt(0).toUpperCase() + review.category.slice(1).replace(/-/g, ' ')
                 return (
                     <li key={review.review_id}>
                         <Link to={`/reviews/${review.review_id}`}>

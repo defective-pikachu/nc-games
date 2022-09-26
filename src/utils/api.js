@@ -19,3 +19,11 @@ export const getUsers = () => {
         return res.data
     })
 }
+
+export const getCategories = () => {
+    return gamesAPI
+    .get('/categories')
+    .then((res) => {
+        return res.data
+    })
+}
