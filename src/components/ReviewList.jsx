@@ -10,7 +10,6 @@ const [reviews, setReviews] = useState([])
 const { category } = useParams()
 
 useEffect(() => {
-    console.log(category, reviews, 'here')
 
     getReviews(category)
         .then(({ reviews }) => {
@@ -18,7 +17,6 @@ useEffect(() => {
             setIsLoading(false)
         })
         .catch((err) => {
-            console.log(err)
         })
 }, [category])
 
