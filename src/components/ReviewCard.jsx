@@ -14,7 +14,6 @@ const ReviewCard = () => {
         axios
         .get(`https://michael-games-app.herokuapp.com/api/reviews/${review_id}`)
         .then(({ data }) => {
-            console.log(data, 'here')
             setReview(data.reviews)
             setIsLoading(false)
         })
