@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+
 .App {
   text-align: center;
+  font-family: 'Comfortaa', cursive; 
 }
 
 .App-logo {
@@ -13,6 +17,20 @@
   }
 }
 
+.Header {
+  text-align: center;
+  color: red;
+  
+}
+
+ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  font-family: 'Comfortaa', cursive; 
+
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,6 +40,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
 }
 
 .App-link {
