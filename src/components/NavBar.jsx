@@ -32,7 +32,7 @@ const NavBar = () => {
             {categories.map((category) => {
                 category.id = uuidv4()
                 let categoryCapitalised = category.slug.charAt(0).toUpperCase() + category.slug.slice(1).replace(/-/g, ' ')
-                return <li key={category.id}><Link to={`/items/categories/${category.slug}`}>{categoryCapitalised}</Link>&nbsp;&nbsp;&nbsp;</li>;
+                return <li key={category.id}><Link to={`/categories/${category.slug}`}>{categoryCapitalised}</Link>&nbsp;&nbsp;&nbsp;</li>;
             })}
             </List>
         </nav>

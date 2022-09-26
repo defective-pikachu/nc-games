@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom'
 import { getReviews } from '../utils/api';
@@ -6,9 +7,12 @@ const ReviewList = () => {
 
 const [isLoading, setIsLoading] = useState(true)
 const [reviews, setReviews] = useState([])
+const { category } = useParams()
 
 useEffect(() => {
-    getReviews()
+    console.log(category, reviews, 'here')
+
+    getReviews(category)
         .then(({ reviews }) => {
             setReviews(reviews)
             setIsLoading(false)
@@ -16,7 +20,7 @@ useEffect(() => {
         .catch((err) => {
             console.log(err)
         })
-}, [])
+}, [category])
 
 if (isLoading) {
     return <p>Loading...</p>
@@ -39,7 +43,7 @@ if (isLoading) {
                             ></img>
                             </Link>
                         <p>Author: {review.owner}</p>
-                        <p>Category: <Link to={`/reviews/categories/${category}`}>{category}</Link></p>
+                        <p>Category: <Link to={`/categories/${review.category}`}>{category}</Link></p>
 
                     </li>
                 )
