@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getReviews } from '../utils/api';
 import { Link } from 'react-router-dom';
 
 const ReviewCard = () => {
@@ -40,7 +39,7 @@ const ReviewCard = () => {
                 alt={`${review.review_img_url}`}
                 ></img>
             <p>{review.review_body}</p>
-            <p>Category: <Link to={`/categories/${review.category}`}>{category}</Link></p>
+            <p>Category: <a href={`/categories/${review.category}`}>{category}</a></p>
             <p>Votes: {review.votes} &nbsp;&nbsp;&nbsp; Comments: {review.comment_count}</p>
         </main>
     )
