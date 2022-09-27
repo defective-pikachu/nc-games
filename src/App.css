@@ -17,10 +17,22 @@
   }
 }
 
-.Header {
-  text-align: center;
-  color: red;
-  
+header h1 {
+  font-size: 70px;
+  font-weight: 600;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.NavBar {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  font-family: 'Comfortaa', cursive; 
+  grid-auto-rows: minmax(20px, auto);
+  background-color: purple;
 }
 
 ul {
@@ -28,7 +40,100 @@ ul {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   font-family: 'Comfortaa', cursive; 
+  grid-auto-rows: minmax(100px, auto);
+}
 
+.HomeButton {
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.HomeButton:visited {
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.HomeButton:hover {
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.HomeButton:focus {
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.HomeButton:active {
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.reviewListBoxes {
+  border: 2px solid #553c9a; 
+  margin: 1px;
+}
+
+.ReviewListLinks {
+  color: #553c9a;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.ReviewListLinks:visited {
+  color: #553c9a;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.ReviewListLinks:active {
+  color: #553c9a;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.ReviewListLinks:focus {
+  color: #553c9a;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a {
+  background-color: #553c9a;
+  color: rgb(178, 238, 58);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  background-color: black;
+  cursor: pointer;
+}
+
+a:focus {
+  background-color: black;
+  cursor: pointer;
+}
+
+a:active {
+  background-color: black;
+}
+
+a:visited {
+  background-color: purple;
 }
 
 .App-header {
