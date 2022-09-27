@@ -1,12 +1,20 @@
 import axios from "axios"
+import { useState } from "react"
 
 const VoteAdder =({ review, setReview, review_id }) => {
 
+    const [hasVoted, setHasVoted] = useState(false)
+
     const voteOnReview = () => {
 
-        setReview(currReview => {
-            return {...review, votes: review.votes + 1}
-        })
+        console.log(hasVoted)
+
+        if (!hasVoted) {
+            setReview(currReview => {
+                setHasVoted(true)
+                return {...review, votes: review.votes + 1}
+            })
+        }
 
         const reqBody = {
             inc_votes: 1,
@@ -18,9 +26,10 @@ const VoteAdder =({ review, setReview, review_id }) => {
             })
             .catch((err) => {
                 setReview(currReview => {
+                    setHasVoted(false)
                     return {...review, votes: review.votes - 1}
                 })
-            })
+            }, [hasVoted])
     }
 
         return (
