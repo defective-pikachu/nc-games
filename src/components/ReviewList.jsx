@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import { getReviews } from '../utils/api';
@@ -30,8 +29,8 @@ if (isLoading) {
             {reviews.map((review) => {
                 const category = review.category.charAt(0).toUpperCase() + review.category.slice(1).replace(/-/g, ' ')
                 return (
-                    <li key={review.review_id}>
-                        <a href={`/reviews/${review.review_id}`}>
+                    <li className='reviewListBoxes' key={review.review_id}>
+                        <a className='ReviewListLinks' href={`/reviews/${review.review_id}`}>
                             <h3>{review.title}</h3>
                         <img
                             width="150rem"
@@ -41,7 +40,7 @@ if (isLoading) {
                             ></img>
                             </a>
                         <p>Author: {review.owner}</p>
-                        <p>Category: <a href={`/categories/${review.category}`}>{category}</a></p>
+                        <p>Category: <a className='ReviewListLinks' href={`/categories/${review.category}`}>{category}</a></p>
 
                     </li>
                 )

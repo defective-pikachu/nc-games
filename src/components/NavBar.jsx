@@ -25,8 +25,8 @@ const NavBar = () => {
 
     return (
         <nav>
-            <a href='/'>Home</a> <br></br>
-            <List>
+            <a className='HomeButton' href='/'>Home</a> <br></br>
+            <List className='NavBar'>
 
             {categories.map((category) => {
                 category.id = uuidv4()

@@ -38,7 +38,7 @@ const ReviewCard = () => {
                 alt={`${review.review_img_url}`}
                 ></img>
             <p>{review.review_body}</p>
-            <p>Category: <a href={`/categories/${review.category}`}>{category}</a></p>
+            <p>Category: <a className='ReviewListLinks' href={`/categories/${review.category}`}>{category}</a></p>
             <p>Votes: {review.votes} &nbsp;&nbsp;&nbsp; Comments: {review.comment_count}</p>
         </main>
     )

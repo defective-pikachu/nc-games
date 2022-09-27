@@ -26,18 +26,96 @@ header h1 {
   -webkit-background-clip: text;
 }
 
+.NavBar {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  font-family: 'Comfortaa', cursive; 
+  grid-auto-rows: minmax(20px, auto);
+  background-color: purple;
+}
+
 ul {
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(3,1fr);
   font-family: 'Comfortaa', cursive; 
+  grid-auto-rows: minmax(100px, auto);
+}
 
+.HomeButton {
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.HomeButton:visited {
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.HomeButton:hover {
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.HomeButton:focus {
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.HomeButton:active {
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.reviewListBoxes {
+  border: 2px solid #553c9a; 
+  margin: 1px;
+}
+
+.ReviewListLinks {
+  color: #553c9a;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.ReviewListLinks:visited {
+  color: #553c9a;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.ReviewListLinks:active {
+  color: #553c9a;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.ReviewListLinks:focus {
+  color: #553c9a;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 a {
   background-color: #553c9a;
-  color: #553c9a;
+  color: rgb(178, 238, 58);
   text-decoration: none;
+  font-weight: bold;
 }
 
 a:hover {
@@ -55,7 +133,7 @@ a:active {
 }
 
 a:visited {
-  background-color: white;
+  background-color: purple;
 }
 
 .App-header {
