@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import VoteAdder from './VoteAdder';
 
 const ReviewCard = () => {
     const [review, setReview] = useState([])
@@ -39,7 +40,8 @@ const ReviewCard = () => {
                 ></img>
             <p>{review.review_body}</p>
             <p>Category: <a className='ReviewListLinks' href={`/categories/${review.category}`}>{category}</a></p>
-            <p>Votes: {review.votes} &nbsp;&nbsp;&nbsp; Comments: {review.comment_count}</p>
+            <VoteAdder review={review} setReview={setReview} review_id={review_id}/>
+            <p>Comments: {review.comment_count}</p>
         </main>
     )
 

@@ -1,6 +1,4 @@
 import axios from "axios"
-import { useParams } from 'react-router-dom';
-
 
 const gamesAPI = axios.create({
     baseURL: 'https://michael-games-app.herokuapp.com/api/'
@@ -29,11 +27,3 @@ export const getCategories = () => {
         return res.data
     })
 }
-
-// export const getReview = () => {
-//     return gamesAPI
-//     .get(`/reviews/`)
-//     .then((res) => {
-//         return res.data
-//     })
-// }
