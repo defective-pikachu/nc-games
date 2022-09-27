@@ -7,8 +7,6 @@ const VoteAdder =({ review, setReview, review_id }) => {
 
     const voteOnReview = () => {
 
-        console.log(hasVoted)
-
         if (!hasVoted) {
             setReview(currReview => {
                 setHasVoted(true)
