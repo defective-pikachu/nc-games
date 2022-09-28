@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import CommentsList from './CommentsList';
 import VoteAdder from './VoteAdder';
 
@@ -40,7 +40,7 @@ const ReviewCard = () => {
                 alt={`${review.review_img_url}`}
                 ></img>
             <p>{review.review_body}</p>
-            <p>Category: <a className='ReviewListLinks' href={`/categories/${review.category}`}>{category}</a></p>
+            <p>Category: <Link to={`/categories/${review.category}`} className='ReviewListLinks'>{category}</Link></p>
             <p><strong>Comments:</strong></p>
             <CommentsList review_id={review_id}/>
         </main>

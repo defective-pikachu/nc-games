@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { getReviews } from '../utils/api';
 
 const ReviewList = () => {
@@ -30,7 +30,7 @@ if (isLoading) {
                 const category = review.category.charAt(0).toUpperCase() + review.category.slice(1).replace(/-/g, ' ')
                 return (
                     <li className='reviewListBoxes' key={review.review_id}>
-                        <a className='ReviewListLinks' href={`/reviews/${review.review_id}`}>
+                        <Link to={`/reviews/${review.review_id}`} className='ReviewListLinks' >
                             <h3>{review.title}</h3>
                         <img
                             width="150rem"
@@ -38,9 +38,9 @@ if (isLoading) {
                             src={review.review_img_url}
                             alt={`${review.title}`}
                             ></img>
-                            </a>
+                            </Link>
                         <p>Author: {review.owner}</p>
-                        <p>Category: <a className='ReviewListLinks' href={`/categories/${review.category}`}>{category}</a></p>
+                        <p>Category: <Link to={`/categories/${review.category}`} className='ReviewListLinks' >{category}</Link></p>
 
                     </li>
                 )

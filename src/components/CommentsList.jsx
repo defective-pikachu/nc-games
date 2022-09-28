@@ -14,6 +14,9 @@ const CommentCard = () => {
             setComments(data.comments)
             setIsLoading(false)
         })
+        .catch((err) => {
+            console.log(err)
+        })
     }, [review_id])
 
     if (isLoading) {
