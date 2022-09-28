@@ -31,7 +31,7 @@ if (isLoading) {
                 return (
                     <li className='reviewListBoxes' key={review.review_id}>
                         <Link to={`/reviews/${review.review_id}`} className='ReviewListLinks' >
-                            <h3>{review.title}</h3>
+                            <h2>{review.title}</h2>
                         <img
                             width="150rem"
                             height="150rem"

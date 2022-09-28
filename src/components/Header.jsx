@@ -3,8 +3,8 @@ import '../App.css';
 
 const Header = () => {
     return (
-        <header>
-        <h1>Board Game Reviews!</h1>
+        <header className='header'>
+        <h1>M e e p l e b a s e</h1>
     </header>
     );
   };

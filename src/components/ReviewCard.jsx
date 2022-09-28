@@ -39,7 +39,6 @@ const ReviewCard = () => {
 
         <main>
             <h3>{review.title}</h3> <VoteAdder review={review} setReview={setReview} review_id={review_id}/>
-            <p>Designer: {review.designer}</p>
             <p>Author: {review.owner}</p>
             <img
                 width="250rem"
@@ -48,6 +47,7 @@ const ReviewCard = () => {
                 alt={`${review.review_img_url}`}
                 ></img>
             <p>{review.review_body}</p>
+            <p>Designer: {review.designer}</p>
             <p>Category: <Link to={`/categories/${review.category}`} className='ReviewListLinks'>{category}</Link></p>
             <p><strong>Comments:</strong></p>
             <CommentsList review_id={review_id} comments={comments} setComments={setComments}/>

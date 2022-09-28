@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 .App {
   text-align: center;
@@ -6,8 +7,37 @@
 }
 
 header h1 {
-  font-size: 70px;
+  font-family: 'Bangers', cursive;
+  font-size: 100px;
   font-weight: 600;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  position: relative;
+  /* top: 18px; */
+  /* left: 10px; */
+}
+
+.header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #555;
+}
+
+h2 {
+  font-size: 20px;
+  padding: 5px;
+  height: 2em;
+  overflow: hidden;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: bold;
   background-image: linear-gradient(to left, #553c9a, #b393d3);
   color: transparent;
   background-clip: text;
@@ -20,7 +50,8 @@ header h1 {
   grid-template-columns: repeat( 4, 1fr );
   font-family: 'Comfortaa', cursive; 
   grid-auto-rows: minmax(30px, auto);
-  background-color: purple;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
 }
 
 .gridList {
@@ -29,48 +60,50 @@ header h1 {
   grid-template-columns: repeat(3,1fr);
   font-family: 'Comfortaa', cursive; 
   grid-auto-rows: minmax(100px, auto);
+  padding:5px;
 }
 
 ol.commentlist { list-style:none; margin:0 0 1em; padding:0; text-indent:0; }
 
 nav {
-  background-color: purple;
-  padding-top: 5px;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
+  padding-top: 20px;
 }
 
 .HomeButton {
   color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
-  background-color: purple;
+  background-color: transparent;
 }
 
 .HomeButton:visited {
   color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
-  background-color: purple;
+  background-color: transparent;
 }
 
 .HomeButton:hover {
   color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
-  background-color: purple;
+  background-color: transparent;
 }
 
 .HomeButton:focus {
   color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
-  background-color: purple;
+  background-color: transparent;
 }
 
 .HomeButton:active {
   color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
-  background-color: purple;
+  background-color: transparent;
 }
 
 .reviewListBoxes {
@@ -107,28 +140,28 @@ nav {
 }
 
 a {
-  background-color: #553c9a;
+  background-color: transparent;
   color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
 }
 
 a:hover {
-  background-color: black;
+  background-color: transparent;
   cursor: pointer;
 }
 
 a:focus {
-  background-color: black;
+  background-color: transparent;
   cursor: pointer;
 }
 
-area:active {
-  background-color: black;
+a:active {
+  background-color: transparent;
 }
 
 a:visited {
-  background-color: purple;
+  background-color: transparent;
 }
 
 .App-header {
