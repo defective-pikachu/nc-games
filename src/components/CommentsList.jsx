@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import axios from "axios";
 
-const CommentCard = () => {
-    const [comments, setComments] = useState([])
+const CommentCard = ({comments, setComments}) => {
     const { review_id } = useParams()
     const [isLoading, setIsLoading] = useState(true)
 

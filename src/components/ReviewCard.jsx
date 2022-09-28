@@ -3,9 +3,11 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import CommentsList from './CommentsList';
 import VoteAdder from './VoteAdder';
+import CommentAdder from './CommentAdder';
 
 const ReviewCard = () => {
     const [review, setReview] = useState([])
+    const [comments, setComments] = useState([])
     const { review_id } = useParams()
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(false)
@@ -48,7 +50,8 @@ const ReviewCard = () => {
             <p>{review.review_body}</p>
             <p>Category: <Link to={`/categories/${review.category}`} className='ReviewListLinks'>{category}</Link></p>
             <p><strong>Comments:</strong></p>
-            <CommentsList review_id={review_id}/>
+            <CommentsList review_id={review_id} comments={comments} setComments={setComments}/>
+            <CommentAdder review_id={review_id} comments={comments} setComments={setComments}/>
         </main>
     )
 
