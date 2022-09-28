@@ -8,6 +8,7 @@ const ReviewCard = () => {
     const [review, setReview] = useState([])
     const { review_id } = useParams()
     const [isLoading, setIsLoading] = useState(true)
+    const [error, setError] = useState(false)
     
     useEffect(() => {
         
@@ -18,8 +19,13 @@ const ReviewCard = () => {
             setIsLoading(false)
         })
         .catch((err) => {
+            setError(true)
         })
     }, [review_id])
+
+    if (error) {
+        return <p>404 - page not found</p>
+    }
     
     if (isLoading) {
         return <p>Loading...</p>
