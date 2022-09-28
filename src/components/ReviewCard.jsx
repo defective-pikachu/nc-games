@@ -1,12 +1,14 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import CommentsList from './CommentsList';
 import VoteAdder from './VoteAdder';
 
 const ReviewCard = () => {
     const [review, setReview] = useState([])
     const { review_id } = useParams()
     const [isLoading, setIsLoading] = useState(true)
+    const [error, setError] = useState(false)
     
     useEffect(() => {
         
@@ -17,8 +19,13 @@ const ReviewCard = () => {
             setIsLoading(false)
         })
         .catch((err) => {
+            setError(true)
         })
     }, [review_id])
+
+    if (error) {
+        return <p>404 - page not found</p>
+    }
     
     if (isLoading) {
         return <p>Loading...</p>
@@ -39,8 +46,9 @@ const ReviewCard = () => {
                 alt={`${review.review_img_url}`}
                 ></img>
             <p>{review.review_body}</p>
-            <p>Category: <a className='ReviewListLinks' href={`/categories/${review.category}`}>{category}</a></p>
-            <p>Comments: {review.comment_count}</p>
+            <p>Category: <Link to={`/categories/${review.category}`} className='ReviewListLinks'>{category}</Link></p>
+            <p><strong>Comments:</strong></p>
+            <CommentsList review_id={review_id}/>
         </main>
     )
 

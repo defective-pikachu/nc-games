@@ -2,6 +2,7 @@ import List from '@mui/material/List';
 import { v4 as uuidv4 } from 'uuid';
 import { getCategories } from '../utils/api.js'
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
 
@@ -25,7 +26,7 @@ const NavBar = () => {
 
     return (
         <nav>
-            <a className='HomeButton' href='/'>Home</a> <br></br>
+            <Link to='/' className='HomeButton'>Home</Link> <br></br>
             <List className='NavBar'>
 
             {categories.map((category) => {

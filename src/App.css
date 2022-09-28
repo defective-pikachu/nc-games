@@ -1,20 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
-
 .App {
   text-align: center;
   font-family: 'Comfortaa', cursive; 
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 header h1 {
@@ -29,9 +17,9 @@ header h1 {
 .NavBar {
   list-style-type: none;
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat( 4, 1fr );
   font-family: 'Comfortaa', cursive; 
-  grid-auto-rows: minmax(20px, auto);
+  grid-auto-rows: minmax(30px, auto);
   background-color: purple;
 }
 
@@ -43,44 +31,51 @@ ul {
   grid-auto-rows: minmax(100px, auto);
 }
 
+ol.commentlist { list-style:none; margin:0 0 1em; padding:0; text-indent:0; }
+
+nav {
+  background-color: purple;
+  padding-top: 5px;
+}
+
 .HomeButton {
-  color: black;
-  background-color: white;
+  color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
+  background-color: purple;
 }
 
 .HomeButton:visited {
-  color: black;
-  background-color: white;
+  color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
+  background-color: purple;
 }
 
 .HomeButton:hover {
-  color: black;
-  background-color: white;
+  color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
+  background-color: purple;
 }
 
 .HomeButton:focus {
-  color: black;
-  background-color: white;
+  color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
+  background-color: purple;
 }
 
 .HomeButton:active {
-  color: black;
-  background-color: white;
+  color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
+  background-color: purple;
 }
 
 .reviewListBoxes {
   border: 2px solid #553c9a; 
-  margin: 1px;
+  margin: 2px;
 }
 
 .ReviewListLinks {
@@ -128,7 +123,7 @@ a:focus {
   cursor: pointer;
 }
 
-a:active {
+area:active {
   background-color: black;
 }
 
@@ -152,11 +147,3 @@ a:visited {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
