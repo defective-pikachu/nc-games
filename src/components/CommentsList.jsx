@@ -22,6 +22,10 @@ const CommentCard = ({comments, setComments}) => {
         return <p>Loading...</p>
     }
 
+    if (comments.length === 0) {
+        return <p>There are no comments yet! Why not be the first to add one?</p>
+    }
+
     return (
         <main>
             <ol className="commentlist">
