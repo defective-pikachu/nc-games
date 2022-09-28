@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import axios from "axios";
-import CommentVoter from "./CommentVoter";
 
 const CommentCard = () => {
     const [comments, setComments] = useState([])
@@ -23,7 +22,7 @@ const CommentCard = () => {
 
     return (
         <main>
-            <ol className="list-numbered">
+            <ol className="commentlist">
                 {comments.map((comment) => {
                     const convertedDate = comment.created_at
                     const dateString = `${convertedDate.split('T')[1].split('.')[0].split(':')[0]}:${convertedDate.split('T')[1].split('.')[0].split(':')[1]}, ${convertedDate.split('T')[0]}`
@@ -31,7 +30,6 @@ const CommentCard = () => {
                         <li key={comment.comment_id}>
                             <p>{`"${comment.body}"`}</p>
                             <p>Posted by <strong>{comment.author}</strong> at: {dateString}</p>
-                            {/* <CommentVoter comments={comments} setComments={setComments} review_id={review_id}/> */}
                         </li>
                     )
                 })}
