@@ -25,7 +25,7 @@ if (isLoading) {
 
     return (
         <main>
-        <ul>
+        <ul className='gridList'>
             {reviews.map((review) => {
                 const category = review.category.charAt(0).toUpperCase() + review.category.slice(1).replace(/-/g, ' ')
                 return (

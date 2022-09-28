@@ -29,7 +29,7 @@ const CommentAdder = ({comments, setComments, review_id}) => {
             setComments((currComments) => {
                 setIsLoading(false)
                 setIsSuccessful(true)
-                return [data.comment, ...comments]
+                return [...comments, data.comments]
             })
         })
         .catch((err) => {
@@ -42,23 +42,36 @@ const CommentAdder = ({comments, setComments, review_id}) => {
     }
 
     if (isSuccessful) {
+        setTimeout(() => {
+            setIsSuccessful(false)
+          }, 5000);
         return <p>Comment Posted!</p>
     }
 
     return (
         <form onSubmit={(e) => handleSubmit(e)}>
-            <label>Submit a Comment</label><br></br>
-            Username: <textarea 
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                >
-            </textarea><br></br>
-            Comment: <textarea
-                value={body}
-                onChange={(e) => setBody(e.target.value)}
-                >
-            </textarea>
-            <br></br><button>Submit</button>
+            <p><strong>Add a Comment</strong></p>
+            <ul class="form-style-1">
+                <li>
+                    <label>Username <span class="required">(required)</span></label>
+                    <input type="text" name="field3" class="field-long" placeholder="Username" value={username}
+                    onChange={(e) => setUsername(e.target.value)}/>
+                </li><br></br>
+                <li>
+                    <label>Comment <span class="required">(required)</span></label>
+                    <textarea
+                        name="field5" 
+                        id="field5" 
+                        class="field-long field-textarea"
+                        value={body}
+                        onChange={(e) => setBody(e.target.value)}
+                        >
+                    </textarea>
+                </li>
+                <li>
+                <input type="submit" value="Submit" />
+                </li>
+            </ul>
 </form>
     )
 }
