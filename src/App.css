@@ -17,9 +17,9 @@ header h1 {
 .NavBar {
   list-style-type: none;
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat( 4, 1fr );
   font-family: 'Comfortaa', cursive; 
-  grid-auto-rows: minmax(20px, auto);
+  grid-auto-rows: minmax(30px, auto);
   background-color: purple;
 }
 
@@ -33,39 +33,44 @@ ul {
 
 ol.commentlist { list-style:none; margin:0 0 1em; padding:0; text-indent:0; }
 
+nav {
+  background-color: purple;
+  padding-top: 5px;
+}
+
 .HomeButton {
-  color: black;
-  background-color: white;
+  color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
+  background-color: purple;
 }
 
 .HomeButton:visited {
-  color: black;
-  background-color: white;
+  color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
+  background-color: purple;
 }
 
 .HomeButton:hover {
-  color: black;
-  background-color: white;
+  color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
+  background-color: purple;
 }
 
 .HomeButton:focus {
-  color: black;
-  background-color: white;
+  color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
+  background-color: purple;
 }
 
 .HomeButton:active {
-  color: black;
-  background-color: white;
+  color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
+  background-color: purple;
 }
 
 .reviewListBoxes {
@@ -142,11 +147,3 @@ a:visited {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
