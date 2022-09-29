@@ -10,13 +10,15 @@ const NavBar = () => {
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
+    setIsLoading(true)
       getCategories()
           .then(({ categories }) => {
               setCategories(categories)
               setIsLoading(false)
           })
           .catch((err) => {
-              console.log(err)
+                setIsLoading(false)
+                console.log(err)
           })
   }, [])
 
