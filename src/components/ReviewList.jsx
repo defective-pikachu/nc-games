@@ -70,14 +70,14 @@ if (isLoading) {
 
     return (
         <main>
-            <div>
+            <div className='sortingBox'>
             Sort By: <button onClick={() => handleComments('comment_count')}
-            >Comments</button>
-            <button onClick={() => handleSort('created_at')}>Date</button>
+            >Comments</button>&nbsp;
+            <button onClick={() => handleSort('created_at')}>Date</button> &nbsp;
             <button onClick={() => handleTitle('title')}
-            >Title</button>
+            >Title</button>&nbsp;
             <button onClick={() => handleVotes('votes')}
-            >Votes</button>
+            >Votes</button>&nbsp;
             <br></br>
             Change Order to: <button onClick={() => handleOrder('ASC')}
             >{buttonText}</button>

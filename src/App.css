@@ -88,6 +88,18 @@ nav {
   padding-top: 20px;
 }
 
+.sortingBox {
+  border-color: purple;
+  border-width: 2px;
+  border-style: solid;
+  padding: 0;
+  padding: 2px;
+  margin: auto;
+  margin-top: 10px;
+  width:fit-content;
+  align-items: center;
+}
+
 .HomeButton {
   color: rgb(178, 238, 58);
   text-decoration: none;
