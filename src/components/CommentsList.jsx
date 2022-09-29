@@ -7,6 +7,7 @@ const CommentsList = ({comments, setComments}) => {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
+        setIsLoading(true)
         axios
         .get(`https://michael-games-app.herokuapp.com/api/reviews/${review_id}/comments`)
         .then(({ data }) => {
@@ -14,6 +15,7 @@ const CommentsList = ({comments, setComments}) => {
             setIsLoading(false)
         })
         .catch((err) => {
+            setIsLoading(false)
             console.log(err)
         })
     }, [review_id])

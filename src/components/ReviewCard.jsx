@@ -13,6 +13,7 @@ const ReviewCard = () => {
     const [error, setError] = useState(false)
     
     useEffect(() => {
+        setIsLoading(true)
         
         axios
         .get(`https://michael-games-app.herokuapp.com/api/reviews/${review_id}`)
@@ -21,6 +22,7 @@ const ReviewCard = () => {
             setIsLoading(false)
         })
         .catch((err) => {
+            setIsLoading(false)
             setError(true)
         })
     }, [review_id])

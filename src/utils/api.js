@@ -4,9 +4,9 @@ const gamesAPI = axios.create({
     baseURL: 'https://michael-games-app.herokuapp.com/api/'
 })
 
-export const getReviews = (category, review_id, sort_by) => {
+export const getReviews = (params) => {
     return gamesAPI
-    .get('/reviews', {params: {category, review_id, sort_by} })
+    .get('/reviews', { params })
     .then((res) => {
         return res.data
     })

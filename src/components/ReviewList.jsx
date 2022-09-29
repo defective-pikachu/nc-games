@@ -1,24 +1,69 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom'
 import { getReviews } from '../utils/api';
-import SortButton from '../components/SortButton';
 
 const ReviewList = () => {
 
-const [isLoading, setIsLoading] = useState(true)
-const [reviews, setReviews] = useState([])
 const { category } = useParams()
 
-useEffect(() => {
+const [isLoading, setIsLoading] = useState(true)
+const [reviews, setReviews] = useState([])
+const [params, setParams] = useState({})
+const [buttonText, setButtonText] = useState('Ascending')
 
-    getReviews(category)
+useEffect(() => {
+    setParams({ category })
+}, [category])
+
+useEffect(() => {
+    console.log(params, 'here are the params')
+    setIsLoading(true)
+    getReviews(params)
         .then(({ reviews }) => {
             setReviews(reviews)
             setIsLoading(false)
         })
         .catch((err) => {
+            setIsLoading(false)
         })
-}, [category])
+}, [params])
+
+const handleSort = (column) => {
+    setParams((currParams) => {
+        return {...currParams, sort_by: column}
+    })
+}
+
+const handleOrder = (order) => {
+    if (buttonText === 'Ascending') {
+        setButtonText('Descending')
+        order = 'ASC'
+    } else {
+        setButtonText('Ascending')
+        order = 'DESC'
+    }
+    setParams((currParams) => {
+        return {...currParams, order}
+    })
+}
+
+const handleTitle = (title) => {
+    setParams((currParams) => {
+        return {...currParams, sort_by: title}
+    })
+}
+
+const handleVotes = (votes) => {
+    setParams((currParams) => {
+        return {...currParams, sort_by: votes}
+    })
+}
+
+const handleComments = (comment_count) => {
+    setParams((currParams) => {
+        return {...currParams, sort_by: comment_count}
+    })
+}
 
 if (isLoading) {
     return <p>Loading...</p>
@@ -26,7 +71,18 @@ if (isLoading) {
 
     return (
         <main>
-            <SortButton reviews={reviews} setReviews={setReviews}/>
+            <div>
+            Sort By: <button onClick={() => handleComments('comment_count')}
+            >Comments</button>
+            <button onClick={() => handleSort('created_at')}>Date</button>
+            <button onClick={() => handleTitle('title')}
+            >Title</button>
+            <button onClick={() => handleVotes('votes')}
+            >Votes</button>
+            <br></br>
+            Change Order to: <button onClick={() => handleOrder('ASC')}
+            >{buttonText}</button>
+            </div>
         <ul className='gridList'>
             {reviews.map((review) => {
                 const category = review.category.charAt(0).toUpperCase() + review.category.slice(1).replace(/-/g, ' ')
