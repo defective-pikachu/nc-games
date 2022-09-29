@@ -98,6 +98,7 @@ if (isLoading) {
                             </Link>
                         <p>Author: {review.owner}</p>
                         <p>Category: <Link to={`/categories/${review.category}`} className='ReviewListLinks' >{category}</Link></p>
+                        <p>Votes: {review.votes}</p>
 
                     </li>
                 )
