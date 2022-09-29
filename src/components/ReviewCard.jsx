@@ -41,8 +41,8 @@ const ReviewCard = () => {
             <h3>{review.title}</h3> <VoteAdder review={review} setReview={setReview} review_id={review_id}/>
             <p>Author: {review.owner}</p>
             <img
-                width="250rem"
-                height="250rem"
+                width="334rem"
+                height="334rem"
                 src={review.review_img_url}
                 alt={`${review.review_img_url}`}
                 ></img>

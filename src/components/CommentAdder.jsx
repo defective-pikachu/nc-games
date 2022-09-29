@@ -1,40 +1,38 @@
 import axios from "axios"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { v4 as uuidv4 } from 'uuid';
 
 const CommentAdder = ({comments, setComments, review_id}) => {
 
-    const [username, setUsername] = useState('')
-    const [body, setBody] = useState('')
     const [isLoading, setIsLoading] = useState(false)
     const [isSuccessful, setIsSuccessful] = useState(false)
+    const [newComment, setNewComment] = useState({author: '', body: ''})
 
-    const comment = {
-        votes: 0,
-        created_at: new Date(),
-        comment_id: uuidv4(),
-        review_id: review_id,
-    }
+
+    useEffect(() => {
+        if(isSuccessful) {
+            setTimeout(() => {
+                setIsSuccessful(false)
+              }, 2500);
+        }
+    }, [isSuccessful])
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        comment.author = username
-        comment.body = body
+        setIsLoading(true)
         axios
-        .post(`https://michael-games-app.herokuapp.com/api/reviews/${review_id}/comments`, comment)
+        .post(`https://michael-games-app.herokuapp.com/api/reviews/${review_id}/comments`, { ...newComment, review_id })
         .then(({data}) => {
-            setIsLoading(true)
-            setUsername('')
-            setBody('')
             setComments((currComments) => {
-                setIsLoading(false)
-                setIsSuccessful(true)
-                return [...comments, data.comments]
+                return [...currComments, data.comment]
             })
+            setNewComment({author: '', body: ''})
+            setIsLoading(false)
+            setIsSuccessful(true)
         })
         .catch((err) => {
-            console.log(err)
-        }, [comment])
+            setIsLoading(false)
+        })
     }
 
     if (isLoading) {
@@ -42,29 +40,26 @@ const CommentAdder = ({comments, setComments, review_id}) => {
     }
 
     if (isSuccessful) {
-        setTimeout(() => {
-            setIsSuccessful(false)
-          }, 5000);
         return <p>Comment Posted!</p>
     }
 
     return (
         <form onSubmit={(e) => handleSubmit(e)}>
             <p><strong>Add a Comment</strong></p>
-            <ul class="form-style-1">
+            <ul className="form-style-1">
                 <li>
-                    <label>Username <span class="required">(required)</span></label>
-                    <input type="text" name="field3" class="field-long" placeholder="Username" value={username}
-                    onChange={(e) => setUsername(e.target.value)}/>
+                    <label>Username <span className="required">(required)</span></label>
+                    <input type="text" name="field3" className="field-long" placeholder="Username" value={newComment.author}
+                    onChange={(e) => setNewComment((currComment) => ({...currComment, author: e.target.value}))}/>
                 </li><br></br>
                 <li>
-                    <label>Comment <span class="required">(required)</span></label>
+                    <label>Comment <span className="required">(required)</span></label>
                     <textarea
                         name="field5" 
                         id="field5" 
-                        class="field-long field-textarea"
-                        value={body}
-                        onChange={(e) => setBody(e.target.value)}
+                        className="field-long field-textarea"
+                        value={newComment.body}
+                        onChange={(e) => setNewComment((currComment) => ({...currComment, body: e.target.value}))}
                         >
                     </textarea>
                 </li>

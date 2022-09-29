@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import axios from "axios";
 
-const CommentCard = ({comments, setComments}) => {
+const CommentsList = ({comments, setComments}) => {
     const { review_id } = useParams()
     const [isLoading, setIsLoading] = useState(true)
 
@@ -45,4 +45,4 @@ const CommentCard = ({comments, setComments}) => {
 
 }
 
-export default CommentCard;
+export default CommentsList;
