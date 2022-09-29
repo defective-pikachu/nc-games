@@ -16,7 +16,6 @@ useEffect(() => {
 }, [category])
 
 useEffect(() => {
-    console.log(params, 'here are the params')
     setIsLoading(true)
     getReviews(params)
         .then(({ reviews }) => {
