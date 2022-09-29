@@ -49,7 +49,13 @@ const CommentAdder = ({comments, setComments, review_id}) => {
             <ul className="form-style-1">
                 <li>
                     <label>Username <span className="required">(required)</span></label>
-                    <input type="text" name="field3" className="field-long" placeholder="Username" value={newComment.author}
+                    <input 
+                    type="text" 
+                    name="field3" 
+                    className="field-long" 
+                    placeholder="Username" 
+                    required
+                    value={newComment.author}
                     onChange={(e) => setNewComment((currComment) => ({...currComment, author: e.target.value}))}/>
                 </li><br></br>
                 <li>
@@ -59,6 +65,7 @@ const CommentAdder = ({comments, setComments, review_id}) => {
                         id="field5" 
                         className="field-long field-textarea"
                         value={newComment.body}
+                        required
                         onChange={(e) => setNewComment((currComment) => ({...currComment, body: e.target.value}))}
                         >
                     </textarea>

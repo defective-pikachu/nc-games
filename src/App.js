@@ -13,7 +13,7 @@ function App() {
     <Routes>
         <Route path='/' element={<ReviewList />} />
         <Route path='/reviews' element={<ReviewList />} />
-        <Route path='*' element={<p>404 not found!</p>} />
+        <Route path='*' element={<p className='fourOhFour'>404 not found!</p>} />
         <Route path='/categories/:category' element={<ReviewList />} />
         <Route path='/reviews/:review_id' element={<ReviewCard />} />
       </Routes>

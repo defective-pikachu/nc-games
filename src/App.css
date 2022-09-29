@@ -6,6 +6,11 @@
   font-family: 'Comfortaa', cursive; 
 }
 
+.fourOhFour {
+  color: purple;
+  font-size: 30px;
+}
+
 header h1 {
   font-family: 'Bangers', cursive;
   font-size: 7vh;
