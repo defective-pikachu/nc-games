@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom'
 import { getReviews } from '../utils/api';
+import SortButton from '../components/SortButton';
 
 const ReviewList = () => {
 
@@ -25,6 +26,7 @@ if (isLoading) {
 
     return (
         <main>
+            <SortButton reviews={reviews} setReviews={setReviews}/>
         <ul className='gridList'>
             {reviews.map((review) => {
                 const category = review.category.charAt(0).toUpperCase() + review.category.slice(1).replace(/-/g, ' ')

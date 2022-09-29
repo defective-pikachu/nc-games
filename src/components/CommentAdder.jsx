@@ -1,6 +1,5 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { v4 as uuidv4 } from 'uuid';
 
 const CommentAdder = ({comments, setComments, review_id}) => {
 
