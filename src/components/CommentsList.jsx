@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import axios from "axios";
 
-const CommentCard = () => {
-    const [comments, setComments] = useState([])
+const CommentsList = ({comments, setComments}) => {
     const { review_id } = useParams()
     const [isLoading, setIsLoading] = useState(true)
 
@@ -23,6 +22,10 @@ const CommentCard = () => {
         return <p>Loading...</p>
     }
 
+    if (comments.length === 0) {
+        return <p>There are no comments yet! Why not be the first to add one?</p>
+    }
+
     return (
         <main>
             <ol className="commentlist">
@@ -30,7 +33,7 @@ const CommentCard = () => {
                     const convertedDate = comment.created_at
                     const dateString = `${convertedDate.split('T')[1].split('.')[0].split(':')[0]}:${convertedDate.split('T')[1].split('.')[0].split(':')[1]}, ${convertedDate.split('T')[0]}`
                     return (
-                        <li key={comment.comment_id}>
+                        <li className='individualComment' key={comment.comment_id}>
                             <p>{`"${comment.body}"`}</p>
                             <p>Posted by <strong>{comment.author}</strong> at: {dateString}</p>
                         </li>
@@ -42,4 +45,4 @@ const CommentCard = () => {
 
 }
 
-export default CommentCard;
+export default CommentsList;

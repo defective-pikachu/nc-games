@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
+import { IoHeartCircleOutline } from "react-icons/io5";
 
 const VoteAdder =({ review, setReview, review_id }) => {
 
@@ -32,9 +33,9 @@ const VoteAdder =({ review, setReview, review_id }) => {
 
         return (
             <section>
-                    <button onClick={() => voteOnReview()}>
-                        {review.votes}
-                        <span aria-label="votes for this review">👍</span>
+                    <button className='likeButton' onClick={() => voteOnReview()}>
+                    <strong>{review.votes}</strong> &nbsp;<IoHeartCircleOutline size={25} style={{fill: '#553c9a'}}/>
+                        <span aria-label="votes for this review"> </span>
                         </button>
             </section>
         )

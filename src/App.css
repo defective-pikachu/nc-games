@@ -1,13 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 .App {
   text-align: center;
   font-family: 'Comfortaa', cursive; 
 }
 
+.fourOhFour {
+  color: purple;
+  font-size: 30px;
+}
+
 header h1 {
-  font-size: 70px;
+  font-family: 'Bangers', cursive;
+  font-size: 7vh;
   font-weight: 600;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #555;
+}
+
+h2 {
+  font-size: 20px;
+  padding: 5px;
+  height: 2em;
+  overflow: hidden;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: bold;
   background-image: linear-gradient(to left, #553c9a, #b393d3);
   color: transparent;
   background-clip: text;
@@ -20,57 +53,81 @@ header h1 {
   grid-template-columns: repeat( 4, 1fr );
   font-family: 'Comfortaa', cursive; 
   grid-auto-rows: minmax(30px, auto);
-  background-color: purple;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
 }
 
-ul {
+.gridList {
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(3,1fr);
   font-family: 'Comfortaa', cursive; 
   grid-auto-rows: minmax(100px, auto);
+  padding:5px;
 }
 
-ol.commentlist { list-style:none; margin:0 0 1em; padding:0; text-indent:0; }
+.commentlist { 
+  list-style:none;
+  margin:0 0 1em; 
+  padding:0; 
+  text-indent:0;
+}
+
+.individualComment {
+  border-style:dashed;
+  border-width: 1px;
+  border-color: purple;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+}
 
 nav {
-  background-color: purple;
-  padding-top: 5px;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
+  padding-top: 20px;
 }
 
 .HomeButton {
   color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
-  background-color: purple;
+  background-color: transparent;
 }
 
 .HomeButton:visited {
   color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
-  background-color: purple;
+  background-color: transparent;
 }
 
 .HomeButton:hover {
   color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
-  background-color: purple;
+  background-color: transparent;
 }
 
 .HomeButton:focus {
   color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
-  background-color: purple;
+  background-color: transparent;
 }
 
 .HomeButton:active {
   color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
-  background-color: purple;
+  background-color: transparent;
+}
+
+.likeButton {
+  display: inline-flex;
+  flex-direction:row; 
+  justify-content: center;
+  align-items: center;
 }
 
 .reviewListBoxes {
@@ -107,28 +164,28 @@ nav {
 }
 
 a {
-  background-color: #553c9a;
+  background-color: transparent;
   color: rgb(178, 238, 58);
   text-decoration: none;
   font-weight: bold;
 }
 
 a:hover {
-  background-color: black;
+  background-color: transparent;
   cursor: pointer;
 }
 
 a:focus {
-  background-color: black;
+  background-color: transparent;
   cursor: pointer;
 }
 
-area:active {
-  background-color: black;
+a:active {
+  background-color: transparent;
 }
 
 a:visited {
-  background-color: purple;
+  background-color: transparent;
 }
 
 .App-header {
@@ -147,3 +204,86 @@ a:visited {
   color: #61dafb;
 }
 
+.form-style-1 {
+	margin: 10px auto;
+	max-width: 400px;
+	padding: 0px 12px 10px 20px;
+	font: 13px 'Comfortaa', sans-serif;
+}
+.form-style-1 li {
+	padding: 0;
+	display: block;
+	list-style: none;
+	margin: 10px 0 0 0;
+}
+.form-style-1 label{
+	margin:0 0 3px 0;
+	padding:0px;
+	display:block;
+	font-weight: bold;
+}
+.form-style-1 input[type=text], 
+.form-style-1 input[type=date],
+.form-style-1 input[type=datetime],
+.form-style-1 input[type=number],
+.form-style-1 input[type=search],
+.form-style-1 input[type=time],
+.form-style-1 input[type=url],
+.form-style-1 input[type=email],
+textarea, 
+select{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border:1px solid purple;
+	padding: 7px;
+	margin:0px;
+	/* -webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out; */
+	outline: none;	
+}
+.form-style-1 input[type=text]:focus, 
+.form-style-1 input[type=date]:focus,
+.form-style-1 input[type=datetime]:focus,
+.form-style-1 input[type=number]:focus,
+.form-style-1 input[type=search]:focus,
+.form-style-1 input[type=time]:focus,
+.form-style-1 input[type=url]:focus,
+.form-style-1 input[type=email]:focus,
+.form-style-1 textarea:focus, 
+.form-style-1 select:focus{
+	-moz-box-shadow: 0 0 8px purple;
+	-webkit-box-shadow: 0 0 8px purple;
+	box-shadow: 0 0 8px purple;
+	border: 1px solid purple;
+}
+.form-style-1 .field-divided{
+	width: 49%;
+}
+
+.form-style-1 .field-long{
+	width: 100%;
+}
+.form-style-1 .field-select{
+	width: 100%;
+}
+.form-style-1 .field-textarea{
+	height: 100px;
+}
+.form-style-1 input[type=submit], .form-style-1 input[type=button]{
+	background: purple;
+	padding: 8px 15px 8px 15px;
+	border: none;
+	color: #fff;
+}
+.form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover{
+	background: purple;
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+}
+.form-style-1 .required{
+	color:red;
+}
