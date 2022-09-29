@@ -33,7 +33,7 @@ const CommentsList = ({comments, setComments}) => {
                     const convertedDate = comment.created_at
                     const dateString = `${convertedDate.split('T')[1].split('.')[0].split(':')[0]}:${convertedDate.split('T')[1].split('.')[0].split(':')[1]}, ${convertedDate.split('T')[0]}`
                     return (
-                        <li key={comment.comment_id}>
+                        <li className='individualComment' key={comment.comment_id}>
                             <p>{`"${comment.body}"`}</p>
                             <p>Posted by <strong>{comment.author}</strong> at: {dateString}</p>
                         </li>

@@ -61,7 +61,21 @@ h3 {
   padding:5px;
 }
 
-.commentlist { list-style:none; margin:0 0 1em; padding:0; text-indent:0; }
+.commentlist { 
+  list-style:none;
+  margin:0 0 1em; 
+  padding:0; 
+  text-indent:0;
+}
+
+.individualComment {
+  border-style:dashed;
+  border-width: 1px;
+  border-color: purple;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+}
 
 nav {
   background-image: linear-gradient(to left, #553c9a, #b393d3);
