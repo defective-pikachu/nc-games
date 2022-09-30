@@ -14,7 +14,6 @@ const CommentsList = ({comments, setComments}) => {
         axios
         .get(`https://michael-games-app.herokuapp.com/api/reviews/${review_id}/comments`)
         .then(({ data }) => {
-            console.log(data.comments, 'here')
             setComments(data.comments)
             setIsLoading(false)
         })
