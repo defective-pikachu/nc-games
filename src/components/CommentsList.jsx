@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import axios from "axios";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { useContext } from 'react'
+import { UserContext } from '../contexts/User'
 
 const CommentsList = ({comments, setComments}) => {
+
+    const { loggedInUser } = useContext(UserContext);
     const { review_id } = useParams()
     const [isLoading, setIsLoading] = useState(true)
     const [isDeleted, setIsDeleted] = useState(false)
@@ -56,16 +60,20 @@ const CommentsList = ({comments, setComments}) => {
                                 <li className='individualComment' key={comment.comment_id}>
                                     <p>{`"${comment.body}"`}</p>
                                     <p>Posted by <strong>{comment.author}</strong> at: {dateString}</p>
-                                    <button 
-                                className='deleteButton' 
-                                onClick={() => {handleDelete(comment.comment_id)}}>
-                                <strong>Delete</strong> &nbsp;
-                                <RiDeleteBin6Line 
-                                size={20} 
-                                style={{fill: '#553c9a'}}/>
-                                
-                                <span aria-label="delete this comment"> </span>
-                            </button>
+
+                                    { loggedInUser.username === comment.author ? 
+                                        <button 
+                                            className='deleteButton' 
+                                            onClick={() => {handleDelete(comment.comment_id)}}>
+                                            <strong>Delete</strong> &nbsp;
+                                            <RiDeleteBin6Line 
+                                                size={20} 
+                                                style={{fill: '#553c9a'}}
+                                            />
+                                        <span aria-label="delete this comment"> </span>
+                                        </button> : null
+
+                                    }
                                 </li>
                         )
                     })}
@@ -86,16 +94,19 @@ const CommentsList = ({comments, setComments}) => {
                             <p>{`"${comment.body}"`}</p>
                             <p>Posted by <strong>{comment.author}</strong> at: {dateString}</p>
 
-                            <button 
-                                className='deleteButton' 
-                                onClick={() => {handleDelete(comment.comment_id)}}>
-                                <strong>Delete</strong> &nbsp;
-                                <RiDeleteBin6Line 
-                                size={20} 
-                                style={{fill: '#553c9a'}}/>
-                                
-                                <span aria-label="delete this comment"> </span>
-                            </button>
+                            { loggedInUser.username === comment.author ? 
+                                        <button 
+                                    className='deleteButton' 
+                                    onClick={() => {handleDelete(comment.comment_id)}}>
+                                    <strong>Delete</strong> &nbsp;
+                                    <RiDeleteBin6Line 
+                                    size={20} 
+                                    style={{fill: '#553c9a'}}/>
+                                    
+                                    <span aria-label="delete this comment"> </span>
+                                </button> : null
+
+                            }
 
                         </li>
                     )
