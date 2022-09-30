@@ -18,7 +18,6 @@ const NavBar = () => {
           })
           .catch((err) => {
                 setIsLoading(false)
-                console.log(err)
           })
   }, [])
 

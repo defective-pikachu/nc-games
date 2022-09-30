@@ -80,6 +80,7 @@ h3 {
   border-left: 0px;
   border-right: 0px;
   border-top: 0px;
+  padding-bottom: 2px;
 }
 
 nav {
@@ -136,6 +137,13 @@ nav {
 }
 
 .likeButton {
+  display: inline-flex;
+  flex-direction:row; 
+  justify-content: center;
+  align-items: center;
+}
+
+.deleteButton {
   display: inline-flex;
   flex-direction:row; 
   justify-content: center;
@@ -250,10 +258,6 @@ select{
 	border:1px solid purple;
 	padding: 7px;
 	margin:0px;
-	/* -webkit-transition: all 0.30s ease-in-out;
-	-moz-transition: all 0.30s ease-in-out;
-	-ms-transition: all 0.30s ease-in-out;
-	-o-transition: all 0.30s ease-in-out; */
 	outline: none;	
 }
 .form-style-1 input[type=text]:focus, 
