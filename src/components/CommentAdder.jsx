@@ -50,14 +50,14 @@ const CommentAdder = ({comments, setComments, review_id}) => {
             <p><strong>Add a Comment</strong></p>
             <ul className="form-style-1">
                 <li>
-                    <label><strong>Username: {loggedInUser.username}</strong> <br></br><br></br>Comment <span className="required">(required)</span></label>
+                    <label className="slightlyBiggerFont"><strong>Username: {loggedInUser.username}</strong> <br></br><br></br>Comment <span className="required">(required)</span></label>
                     <textarea
                         name="field5" 
                         id="field5" 
                         className="field-long field-textarea"
                         value={newComment.body}
                         required
-                        onChange={(e) => setNewComment((currComment) => ({...currComment, body: e.target.value}))}
+                        onChange={(e) => setNewComment((currComment) => ({...currComment, author: loggedInUser.username, body: e.target.value}))}
                         >
                     </textarea>
                 </li>
