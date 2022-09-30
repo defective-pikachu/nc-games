@@ -25,7 +25,7 @@ const CommentsList = ({comments, setComments}) => {
             setIsLoading(false)
             console.log(err)
         })
-    }, [review_id, isDeleted])
+    }, [review_id, isDeleted, setComments])
     
     const handleDelete = (comment_id) => {
         setIsLoading(true)

@@ -9,7 +9,6 @@ import ReviewCard from './components/ReviewCard';
 import Users from './components/Users';
 
 function App() {
-  const { setLoggedInUser } = useContext(UserContext);
   return (
     <div className="App">
       
