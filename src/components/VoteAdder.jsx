@@ -8,27 +8,28 @@ const VoteAdder =({ review, setReview, review_id }) => {
 
     const voteOnReview = () => {
 
+        const reqBody = {
+            inc_votes: 1,
+        };
+
         if (!hasVoted) {
             setReview(currReview => {
                 setHasVoted(true)
                 return {...review, votes: review.votes + 1}
             })
+            axios
+                .patch(`https://michael-games-app.herokuapp.com/api/reviews/${review_id}`, reqBody)
+                .then(({data}) => {
+                })
+                .catch((err) => {
+                    setReview(currReview => {
+                        setHasVoted(false)
+                        return {...review, votes: review.votes - 1}
+                    })
+                }, [hasVoted])
         }
 
-        const reqBody = {
-            inc_votes: 1,
-        };
 
-        axios
-            .patch(`https://michael-games-app.herokuapp.com/api/reviews/${review_id}`, reqBody)
-            .then(({data}) => {
-            })
-            .catch((err) => {
-                setReview(currReview => {
-                    setHasVoted(false)
-                    return {...review, votes: review.votes - 1}
-                })
-            }, [hasVoted])
     }
 
         return (

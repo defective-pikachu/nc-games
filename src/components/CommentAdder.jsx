@@ -1,8 +1,11 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { useContext } from 'react'
+import { UserContext } from '../contexts/User'
 
 const CommentAdder = ({comments, setComments, review_id}) => {
 
+    const { loggedInUser } = useContext(UserContext);
     const [isLoading, setIsLoading] = useState(false)
     const [isSuccessful, setIsSuccessful] = useState(false)
     const [newComment, setNewComment] = useState({author: '', body: ''})
@@ -47,25 +50,14 @@ const CommentAdder = ({comments, setComments, review_id}) => {
             <p><strong>Add a Comment</strong></p>
             <ul className="form-style-1">
                 <li>
-                    <label>Username <span className="required">(required)</span></label>
-                    <input 
-                    type="text" 
-                    name="field3" 
-                    className="field-long" 
-                    placeholder="Username" 
-                    required
-                    value={newComment.author}
-                    onChange={(e) => setNewComment((currComment) => ({...currComment, author: e.target.value}))}/>
-                </li><br></br>
-                <li>
-                    <label>Comment <span className="required">(required)</span></label>
+                    <label className="slightlyBiggerFont"><strong>Username: {loggedInUser.username}</strong> <br></br><br></br>Comment <span className="required">(required)</span></label>
                     <textarea
                         name="field5" 
                         id="field5" 
                         className="field-long field-textarea"
                         value={newComment.body}
                         required
-                        onChange={(e) => setNewComment((currComment) => ({...currComment, body: e.target.value}))}
+                        onChange={(e) => setNewComment((currComment) => ({...currComment, author: loggedInUser.username, body: e.target.value}))}
                         >
                     </textarea>
                 </li>
