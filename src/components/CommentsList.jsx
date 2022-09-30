@@ -6,7 +6,6 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 const CommentsList = ({comments, setComments}) => {
     const { review_id } = useParams()
     const [isLoading, setIsLoading] = useState(true)
-    // const [commentID, setCommentID] = useState(0)
     const [isDeleted, setIsDeleted] = useState(false)
 
     
