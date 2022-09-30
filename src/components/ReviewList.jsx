@@ -6,11 +6,11 @@ const ReviewList = () => {
 
 const { category } = useParams()
 
-const [isLoading, setIsLoading] = useState(true)
-const [reviews, setReviews] = useState([])
-const [params, setParams] = useState({})
 const [buttonText, setButtonText] = useState('Ascending')
 const [error, setError] = useState(false)
+const [isLoading, setIsLoading] = useState(true)
+const [params, setParams] = useState({})
+const [reviews, setReviews] = useState([])
 
 useEffect(() => {
     setParams({ category })
@@ -77,15 +77,15 @@ if (isLoading) {
     return (
         <main>
             <div className='sortingBox'>
-            Sort By: <button onClick={() => handleComments('comment_count')}
+            <strong>Sort By: </strong><button className='button-18' onClick={() => handleComments('comment_count')}
             >Comments</button>&nbsp;
-            <button onClick={() => handleSort('created_at')}>Date</button> &nbsp;
-            <button onClick={() => handleTitle('title')}
+            <button className='button-18' onClick={() => handleSort('created_at')}>Date</button> &nbsp;
+            <button className='button-18' onClick={() => handleTitle('title')}
             >Title</button>&nbsp;
-            <button onClick={() => handleVotes('votes')}
+            <button className='button-18' onClick={() => handleVotes('votes')}
             >Votes</button>&nbsp;
             <br></br>
-            Change Order to: <button onClick={() => handleOrder('ASC')}
+            <strong>Change Order to: </strong><button className='button-18' onClick={() => handleOrder('ASC')}
             >{buttonText}</button>
             </div>
         <ul className='gridList'>
