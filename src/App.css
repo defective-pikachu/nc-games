@@ -11,6 +11,17 @@
   font-size: 30px;
 }
 
+.loggedInAs {
+  color: purple;
+  font-size: 15px;
+}
+
+.profile_img {
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 header h1 {
   font-family: 'Bangers', cursive;
   font-size: 7vh;
@@ -22,13 +33,6 @@ header h1 {
   margin-top: 25px;
   margin-bottom: 10px;
   position: relative;
-}
-
-.header img {
-  float: left;
-  width: 100px;
-  height: 100px;
-  background: #555;
 }
 
 h2 {
@@ -148,6 +152,14 @@ nav {
   flex-direction:row; 
   justify-content: center;
   align-items: center;
+}
+
+.logInButton {
+  display: inline-flex;
+  flex-direction:row; 
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
 }
 
 .reviewListBoxes {

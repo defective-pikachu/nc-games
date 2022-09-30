@@ -27,7 +27,7 @@ const NavBar = () => {
 
     return (
         <nav>
-            <Link to='/' className='HomeButton'>Home</Link> <br></br>
+            <Link to='/' className='HomeButton'>Home</Link>&nbsp;&nbsp;&nbsp; <Link to='/users' className='HomeButton'>Log In</Link> <br></br>
             <List className='NavBar'>
 
             {categories.map((category) => {
